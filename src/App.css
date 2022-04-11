@@ -2,11 +2,103 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+}
+.App{
   width: 100vw;
+  background: rgb(199, 197, 197);
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .container{
   width: 50%;
-  margin: 0 auto;
+  background: white;
+  border-radius: 1rem;
+  margin: 2.5rem 0;
+  height: 100%;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar{
+  width: 0;
+}
+.searchcontainer{
+  margin: 1rem .4rem;
+  
+}
+.searchcontainer input{
+  border:none;
+  border-bottom: .1rem solid rgba(126, 124, 124,0.5);
+  width: 100%;
+  padding: .5rem 0;
+  font-size: .85rem;
+  font-weight: lighter;
+  outline: none;
+  margin: .5rem;
+}
+.itemcontainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 95%;
+  margin: 1rem 0;
+  
+}
+.leftImg{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: .5px solid rgba(126, 124, 124,0.5);
+}
+.leftImg img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding-left: .5rem;
+}
+.rightTexts{
+  width: 70%;
+}
+.rightTexts h2{
+  font-weight: 700;
+}
+.btnplus{
+  border: none;
+  font-size: 3rem;
+  background: none;
+  color: rgba(126, 124, 124,0.5);
+  font-weight: 500;
+}
+.rightTexts p{
+  padding-left: 1rem;
+  font-size: .7rem;
+}
+.hidden{
+  display: none;
+  margin-top: 1rem;
+}
+.show{
+  display: block;
+  margin-top: 1rem;
+}
+.tagcontainer{
+  display: flex;
+  margin: .5rem 0 0 0;
+  padding-left: .5rem;
+}
+.tags{
+  padding: .5rem;
+  background:  rgba(126, 124, 124,0.5);
+  border-radius: .1rem;
+  margin: 0 .5rem;
+}
+.taginput{
+  margin-left: 1rem;
+  border: none;
+  border-bottom: .05rem solid rgba(126, 124, 124,0.5);
+  padding: .5rem 0;
+  font-weight: 400;
+  outline: none;
 }
