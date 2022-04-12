@@ -16,7 +16,6 @@ const Search = ({setValue, setTagValue}) => {
   return (
     <div className='searchcontainer'>
         <input  placeholder='Search by name' onChange={(e)=>setValue(e.target.value)}/>
-        <input  placeholder='Search by tag' onChange={(e)=>setTagValue(e.target.value)}/>
     </div>
   )
 }

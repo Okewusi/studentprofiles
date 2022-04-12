@@ -14,7 +14,7 @@ const Display = ({pic,firstName,lastName,email,company,skill,grades}) => {
     const [show, setShow] = useState(false);
     const [ tag, setTag] = useState([]);
     const addTag = (e)=>{
-        if(e.keyCode === 13){
+        if(e.keyCode === 13 && e.target.value){
             let item = e.target.value;
         setTag((oldvalues)=>{
             return [...oldvalues,item]

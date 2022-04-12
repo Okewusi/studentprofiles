@@ -6,9 +6,7 @@ import Search from './Search';
 const Home = () => {
     const [apiData, setApiData] = useState([]);
     const [value, setValue] = useState('');
-    const [tagValue, setTagValue] = useState('');
-    const [ tag, setTag] = useState([]);
-    //  Fetch api data on loadof webpage and update state
+    //  Fetch api data on load of webpage and store api data in state
     useEffect(() => {
         fetch(`https://api.hatchways.io/assessment/students`)
             .then(response => response.json())
@@ -19,8 +17,8 @@ const Home = () => {
     
   return (
     <div className='container'>
-        <Search setValue={setValue} setTagValue={setTagValue} tagValue= {tagValue}/>
-        {/* map through array of data and display */}
+        <Search setValue={setValue} />
+        {/* if no value in search input show all api data else show only items that satisfy the search input */}
         {apiData.filter(data=>{
             if(value ===""){
                 return data
@@ -28,7 +26,7 @@ const Home = () => {
                 return data.firstName.toLowerCase().startsWith(value.toLowerCase()) || data.lastName.toLowerCase().startsWith(value.toLowerCase())
             }
         }).map(data=>(
-            <Display  key = {data.id} pic = {data.pic} firstName = {data.firstName} lastName={data.lastName} email = {data.email }  company  = {data.company} skill= {data.skill}  grades = {data.grades} tag={tag} setTag={setTag}/>
+            <Display  key = {data.id} pic = {data.pic} firstName = {data.firstName} lastName={data.lastName} email = {data.email }  company  = {data.company} skill= {data.skill}  grades = {data.grades}  />
         ))}
     </div>
   )
